@@ -12,7 +12,7 @@ const App = () => {
   const [userNominations, setUserNominations] = useState([]);
 
   const requestMovie = async(userSeach) => {
-    const url = `http://www.omdbapi.com/?s=${userSeach}&apikey=b2dc4cd3`;
+    const url = `http://www.omdbapi.com/?s=${userSeach}&type=movie&apikey=b2dc4cd3`;
     const response = await fetch(url);
     const responseJSON = await response.json();
 
@@ -34,12 +34,22 @@ const App = () => {
   return(
     <div className="container-fluid movieScroll">
       <div className='row d-flex align-items-center mt-4 mb-4'>
-        <MovieHeader heading='Movies' />
+        <MovieHeader heading='The Shoppies Nominees' />
         <MovieSearch userSearch={userSearch} setUserSearch={setUserSearch} />
       </div>
       <div className="row">
         <MovieList 
           moviesList={movies} 
+          nominateComponent={NominateMovie}
+          handleNominateClick={addNominee} 
+        />
+      </div>
+      <div className='row d-flex align-items-center mt-4 mb-4'>
+        <MovieHeader heading='My Nominees' />
+      </div>
+      <div className="row">
+        <MovieList 
+          moviesList={userNominations} 
           nominateComponent={NominateMovie}
           handleNominateClick={addNominee} 
         />

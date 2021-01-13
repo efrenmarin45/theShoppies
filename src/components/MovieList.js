@@ -14,7 +14,7 @@ const MovieList = (props) => {
                             <NominateComponent />
                         </div>
                         <div className='text-left movieTitleText'>
-                            <p>{movie.Title}</p>
+                            <p>{movie.Year}</p>
                         </div>
                     </div>
 				</div>
