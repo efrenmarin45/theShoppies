@@ -5,6 +5,7 @@ import MovieList from './components/MovieList';
 import MovieHeader from './components/MovieHeader';
 import MovieSearch from './components/MovieSearch';
 import NominateMovie from './components/NominateMovie';
+import RemoveNominee from './components/RemoveNominee';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -31,6 +32,15 @@ const App = () => {
   }
 
 
+  const removeNomineeMovie = (movie) => {
+    const newNomineeList = userNominations.filter(
+      (nominee) => nominee.imdbID !== movie.imdbID
+    );
+
+    setUserNominations(newNomineeList);
+  }
+
+
   return(
     <div className="container-fluid movieScroll">
       <div className='row d-flex align-items-center mt-4 mb-4'>
@@ -50,8 +60,8 @@ const App = () => {
       <div className="row">
         <MovieList 
           moviesList={userNominations} 
-          nominateComponent={NominateMovie}
-          handleNominateClick={addNominee} 
+          nominateComponent={RemoveNominee}
+          handleNominateClick={removeNomineeMovie} 
         />
       </div>
     </div>
