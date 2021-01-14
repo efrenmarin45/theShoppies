@@ -27,7 +27,10 @@ const App = () => {
   }, [userSearch]);
 
   const addNominee = (movie) => {
-    const newNomineeList = [...userNominations, movie];
+    let newNomineeList = [...userNominations].filter(
+      (nominee) => nominee.imdbID !== movie.imdbID
+    );
+    newNomineeList.push(movie);
     setUserNominations(newNomineeList);
   }
 
