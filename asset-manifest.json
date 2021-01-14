@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/theShoppies/static/css/main.aeef71fa.chunk.css",
+    "main.js": "/theShoppies/static/js/main.5307a874.chunk.js",
+    "main.js.map": "/theShoppies/static/js/main.5307a874.chunk.js.map",
+    "runtime-main.js": "/theShoppies/static/js/runtime-main.b53d74c7.js",
+    "runtime-main.js.map": "/theShoppies/static/js/runtime-main.b53d74c7.js.map",
+    "static/css/2.1a02f21c.chunk.css": "/theShoppies/static/css/2.1a02f21c.chunk.css",
+    "static/js/2.6d591c02.chunk.js": "/theShoppies/static/js/2.6d591c02.chunk.js",
+    "static/js/2.6d591c02.chunk.js.map": "/theShoppies/static/js/2.6d591c02.chunk.js.map",
+    "index.html": "/theShoppies/index.html",
+    "static/css/2.1a02f21c.chunk.css.map": "/theShoppies/static/css/2.1a02f21c.chunk.css.map",
+    "static/css/main.aeef71fa.chunk.css.map": "/theShoppies/static/css/main.aeef71fa.chunk.css.map",
+    "static/js/2.6d591c02.chunk.js.LICENSE.txt": "/theShoppies/static/js/2.6d591c02.chunk.js.LICENSE.txt",
+    "static/media/moviePoster.10e8c0ff.jpg": "/theShoppies/static/media/moviePoster.10e8c0ff.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b53d74c7.js",
+    "static/css/2.1a02f21c.chunk.css",
+    "static/js/2.6d591c02.chunk.js",
+    "static/css/main.aeef71fa.chunk.css",
+    "static/js/main.5307a874.chunk.js"
+  ]
+}
