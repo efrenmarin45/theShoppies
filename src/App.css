@@ -7,10 +7,14 @@ body {
   color: #ffffff;
 }
 
-.movieScroll > .row {
+.header {
+  font-family: 'Oswald', sans-serif;
+}
+
+/* .movieScroll > .row {
   overflow-x: auto;
   flex-wrap: nowrap;
-}
+} */
 
 .movieTitleText{
   font-weight: bold;
@@ -58,6 +62,7 @@ body {
   text-align: center;
   padding: 20px;
   font-size: 20px;
+  font-weight: bold;
 }
 
 .hide{
