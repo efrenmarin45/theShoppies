@@ -13,7 +13,6 @@ const App = () => {
   const [userSearch, setUserSearch] = useState('');
   const [userNominations, setUserNominations] = useState([]);
 
-
   const requestMovie = async(userSearch) => {
     const url = `https://www.omdbapi.com/?s=${userSearch}&type=movie&apikey=b2dc4cd3`;
     const response = await fetch(url);
@@ -70,6 +69,7 @@ const App = () => {
     const newNomineeList = userNominations.filter(
       (nominee) => nominee.imdbID !== movie.imdbID
     );
+
     setUserNominations(newNomineeList);
 
     const movieLimit = document.querySelector('.notification');
@@ -78,7 +78,7 @@ const App = () => {
     if(newNomineeList.length < 5){
       movieLimit.style.display = 'none';
     }
-    else{
+    else if(newNomineeList.length ===  5){
       movieLimit.style.display = 'block';
     }
 
