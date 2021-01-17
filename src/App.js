@@ -13,6 +13,8 @@ const App = () => {
   const [userSearch, setUserSearch] = useState('');
   const [userNominations, setUserNominations] = useState([]);
 
+
+  // Calls on API
   const requestMovie = async(userSearch) => {
     const url = `https://www.omdbapi.com/?s=${userSearch}&type=movie&apikey=b2dc4cd3`;
     const response = await fetch(url);
@@ -25,11 +27,12 @@ const App = () => {
   }
 
 
+  // Changes page based on userSearch
   useEffect(() => {
     requestMovie(userSearch);
   }, [userSearch]);
 
-
+  // Adding user nominee / includes logic to show notice
   const addNominee = (movie) => {
     let newNomineeList = [...userNominations].filter(
       (nominee) => nominee.imdbID !== movie.imdbID
@@ -65,6 +68,7 @@ const App = () => {
   }
 
 
+  // Removes user nominee / includes logic to show notice
   const removeNomineeMovie = (movie) => {
     const newNomineeList = userNominations.filter(
       (nominee) => nominee.imdbID !== movie.imdbID
