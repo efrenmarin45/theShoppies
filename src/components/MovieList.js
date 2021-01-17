@@ -1,6 +1,7 @@
 import React from 'react';
 import moviePoster from '../img/moviePoster.jpg';
 
+
 const MovieList = (props) => {
     const NominateComponent = props.nominateComponent;
 

@@ -14,8 +14,8 @@ const App = () => {
   const [userNominations, setUserNominations] = useState([]);
 
 
-  const requestMovie = async(userSeach) => {
-    const url = `https://www.omdbapi.com/?s=${userSeach}&type=movie&apikey=b2dc4cd3`;
+  const requestMovie = async(userSearch) => {
+    const url = `https://www.omdbapi.com/?s=${userSearch}&type=movie&apikey=b2dc4cd3`;
     const response = await fetch(url);
     const responseJSON = await response.json();
 
@@ -35,8 +35,34 @@ const App = () => {
     let newNomineeList = [...userNominations].filter(
       (nominee) => nominee.imdbID !== movie.imdbID
     );
+
     newNomineeList.push(movie);
     setUserNominations(newNomineeList);
+
+    const movieLimit = document.querySelector('.notification');
+    const overMovieLimit = document.querySelector('.notification-over');
+    const welcomeMsg = document.querySelector('.welcome');
+
+    if(newNomineeList.length ===  5){
+      movieLimit.style.display = 'block';
+    }
+    else{
+      movieLimit.style.display = 'none';
+    }
+    
+    if(newNomineeList.length > 5){
+      overMovieLimit.style.display = 'block';
+    }
+    else{
+      overMovieLimit.style.display = 'none';
+    }
+  
+    if(newNomineeList.length < 1){
+      welcomeMsg.style.display = 'block';
+    }
+    else{
+      welcomeMsg.style.display = 'none';
+    }
   }
 
 
@@ -44,8 +70,24 @@ const App = () => {
     const newNomineeList = userNominations.filter(
       (nominee) => nominee.imdbID !== movie.imdbID
     );
-
     setUserNominations(newNomineeList);
+
+    const movieLimit = document.querySelector('.notification');
+    const overMovieLimit = document.querySelector('.notification-over');
+
+    if(newNomineeList.length < 5){
+      movieLimit.style.display = 'none';
+    }
+    else{
+      movieLimit.style.display = 'block';
+    }
+
+    if(newNomineeList.length > 5){
+      overMovieLimit.style.display = 'block';
+    }
+    else{
+      overMovieLimit.style.display = 'none';
+    }
   }
 
 
@@ -53,6 +95,15 @@ const App = () => {
     <div className="container-fluid movieScroll">
       <div className='row d-flex align-items-center mt-4 mb-4'>
         <MovieHeader heading='The Shoppies Nominees' />
+        <div className='welcome'>
+          <p>Welcome to The Shoppies! <br></br> Please select your top <b>5</b> movies to nominate for a Shoppie!</p>
+        </div>
+        <div className='notification hide'>
+          <p>Thank you for selecting your top 5 movie nominees!</p>
+        </div>
+        <div className='notification-over hide'>
+          <p>Only 5 movies can be nominated!<br></br>Please remove nominations until you have only 5.</p>
+        </div>
         <MovieSearch userSearch={userSearch} setUserSearch={setUserSearch} />
       </div>
       <div className="row">
@@ -66,7 +117,7 @@ const App = () => {
         <MovieHeader heading='My Nominees' />
       </div>
       <div className="row">
-        <MovieList 
+        <MovieList
           moviesList={userNominations} 
           nominateComponent={RemoveNominee}
           handleNominateClick={removeNomineeMovie} 
