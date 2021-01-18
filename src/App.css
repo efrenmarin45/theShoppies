@@ -93,8 +93,8 @@ body {
   background-repeat: no-repeat;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation-name: notification;
-  -webkit-animation-duration: 3s;
+  -webkit-animation-name: overlay;
+  -webkit-animation-duration: 2.5s;
   -webkit-animation-iteration-count: infinite;
   -webkit-background-size: 8rem 100%;
   
