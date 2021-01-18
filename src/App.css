@@ -127,26 +127,6 @@ body {
   margin: 15px 15px 11px 15px;
   padding: 15px 15px 11px 15px;
   font-size: 24px;
-  background: #ffffff 
-  -webkit-gradient(linear, 100% 0, 0 0, from(#ffffff), color-stop(0.5, gold), to(#ffffff));
-  background-position: 4rem top;
-  background-repeat: no-repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation-name: notification;
-  -webkit-animation-duration: 3.2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-background-size: 4rem 100%;
-}
-
-@keyframes notification {
-    0% {
-        background-position: -4rem top;
-    }
-
-    100% {
-        background-position: 60.5rem top;
-    }
 }
 
 
