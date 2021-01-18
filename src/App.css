@@ -47,6 +47,7 @@ body {
 .movieImage > img{
   width: 275px;
   height: 425px;
+  border-radius: 10px;
 } 
 
 .searchBar{
@@ -136,7 +137,6 @@ body {
   -webkit-animation-duration: 3.2s;
   -webkit-animation-iteration-count: infinite;
   -webkit-background-size: 4rem 100%;
-  
 }
 
 @keyframes notification {
@@ -166,7 +166,7 @@ body {
   -webkit-animation-name: notification-over; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
   animation-name: notification-over;
-  animation-duration: 1.5s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
 }
 
@@ -238,7 +238,6 @@ body {
   }
   
   .notification-over{
-
     margin: 25px;
     padding: 15px 25px 15px 25px;
     font-weight: bold;
@@ -246,9 +245,10 @@ body {
   }
 }
 
+
 @media screen and (max-width: 940px){
   .welcome{
     font-size: medium;
     padding: 0 25px 0 25px;
   }
-      }
+}

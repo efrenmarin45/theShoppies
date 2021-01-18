@@ -103,7 +103,7 @@ const App = () => {
           <p>Welcome to The Shoppies! <br></br> Please select your top <b>5</b> movies to nominate for a Shoppie!</p>
         </div>
         <div className='notification hide'>
-          <p>Thank you for selecting your top 5 movie nominees!</p>
+          <p>testThank you for selecting your top 5 movie nominees!</p>
         </div>
         <div className='notification-over hide'>
           <p>Only 5 movies can be nominated!<br></br>Please remove nominations until you have only 5.</p>
